@@ -1,0 +1,11 @@
+CREATE TABLE BOOK (
+  ID_BOOK                   BIGINT(19)    NOT NULL,
+  TITLE                     VARCHAR(255)  NOT NULL,
+  DESCRIPTION               VARCHAR(4000) NOT NULL,
+  ISBN                      VARCHAR(20)   NOT NULL,
+  NR_VERSAO					        INT(8)		    NOT NULL,
+  DT_INCLUSAO					      TIMESTAMP	    NOT NULL,
+  DT_ALTERACAO				      TIMESTAMP			NOT NULL,
+  COD_USUARIO_ALTERACAO		  VARCHAR2(50)	NOT NULL,
+  PRIMARY KEY (ID_BOOK)
+)
