@@ -21,25 +21,25 @@ class JpaHibernateTest {
         em = emf.createEntityManager()
     }
 
-void initializerDatabase() {
-    Session session = em.unwrap(Session.class)
-    session.doWork(new Work() {
-        @Override
-        void execute(Connection connection) throws SQLException {
-            try {
-                File script = new File(getClass().getResource("/data.sql").getFile())
-                RunScript.execute(connection, new FileReader(script))
-            } catch (FileNotFoundException ex) {
-                throw new RuntimeException(ex)
+    void initializerDatabase() {
+        Session session = em.unwrap(Session.class)
+        session.doWork(new Work() {
+            @Override
+            void execute(Connection connection) throws SQLException {
+                try {
+                    File script = new File(getClass().getResource("/data.sql").getFile())
+                    RunScript.execute(connection, new FileReader(script))
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex)
+                }
             }
-        }
-    })
-}
+        })
+    }
 
-@AfterClass
-static void tearDown() {
-    em.clear()
-    em.close()
-    emf.close()
-}
+    @AfterClass
+    static void tearDown() {
+        em.clear()
+        em.close()
+        emf.close()
+    }
 }

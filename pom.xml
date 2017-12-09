@@ -3,14 +3,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>GroovyExample</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    
-    <name>GroovyExample</name>
-    <description>Demo project for Groovy Example</description>
+    <groupId>com.programmerinaction</groupId>
 
+    <artifactId>groovy-sample</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Groovy Samples</name>
+    <url>http://programmerinaction.com</url>
+
+    <repositories>
+        <repository>
+            <id>jboss-nexus-repo</id>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>pia-repo</id>
+            <url>https://github.com/nelsoncastro/pia-repo/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
 
@@ -21,6 +38,7 @@
         </dependency>
 
         <!-- spring -->
+
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
@@ -35,13 +53,6 @@
             <version>1.7.12</version>
         </dependency>
 
-        <!-- junit -->
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
 
         <dependency>
             <groupId>javax.validation</groupId>
@@ -83,6 +94,14 @@
             <version>1.4.192</version>
         </dependency>
 
+        <!-- Test -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -106,10 +125,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
                     <compilerId>groovy-eclipse-compiler</compilerId>
                     <verbose>true</verbose>
                 </configuration>
@@ -117,14 +136,14 @@
                     <dependency>
                         <groupId>org.codehaus.groovy</groupId>
                         <artifactId>groovy-eclipse-compiler</artifactId>
-                        <version>2.7.0-01</version>
+                        <version>${groovy-eclipse-compiler.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.8</version>
+                <version>${maven-eclipse-plugin.version}</version>
                 <configuration>
                     <additionalProjectnatures>
                         <projectnature>org.eclipse.jdt.groovy.core.groovyNature</projectnature>
@@ -136,4 +155,21 @@
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+        <jdk.version>1.8</jdk.version>
+
+        <!-- Plugins Versions -->
+
+        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+        <maven-source-plugin.version>2.3</maven-source-plugin.version>
+        <maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version>
+        <groovy-eclipse-compiler.version>2.7.0-01</groovy-eclipse-compiler.version>
+
+
+        <!-- Test Dependencies -->
+
+        <junit.version>4.12</junit.version>
+    </properties>
 </project>

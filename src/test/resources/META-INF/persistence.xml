@@ -7,7 +7,7 @@
 
     <persistence-unit name="groovyPU" transaction-type="RESOURCE_LOCAL">
 
-        <class>br.com.demo.groovy.domain.entity.Book</class>
+        <class>com.programmerinaction.groovy.domain.entity.Book</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url"

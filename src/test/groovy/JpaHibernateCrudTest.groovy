@@ -1,6 +1,6 @@
-import br.com.demo.groovy.domain.entity.Book
-import br.com.demo.groovy.domain.enums.Operacao
-import br.com.demo.groovy.domain.util.Executor
+import com.programmerinaction.groovy.domain.entity.Book
+import com.programmerinaction.groovy.domain.enums.Operacao
+import com.programmerinaction.groovy.domain.util.Executor
 import org.junit.Test
 
 import static org.junit.Assert.*
