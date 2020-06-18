@@ -1,6 +1,7 @@
 # groovy-sample
 > This repository contains code related to Groovy programming language.
 
+![groovy-logo](https://user-images.githubusercontent.com/4312368/85081546-a3d9ce00-b1a2-11ea-805b-ee68a9e565bd.png)
 
 ## Meta
 
