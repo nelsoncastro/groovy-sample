@@ -5,7 +5,7 @@
 
 ## Meta
 
-Nelson Castro – [@nelsonbsbdf](https://twitter.com/nelsonbsbdf) – nelsoncastro.developer@gmail.com
+Nelson Castro – nelsoncastro.developer@gmail.com
 
 ## Contributing
 
